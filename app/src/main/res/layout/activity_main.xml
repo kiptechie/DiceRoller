@@ -7,17 +7,18 @@
               tools:context=".MainActivity"
               android:layout_gravity="center_horizontal|center_vertical">
 
-    <TextView
+    <ImageView
+            android:id="@+id/dice_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1"
-            android:textSize="30sp"
-            android:layout_gravity="center_horizontal|center_vertical"
-    />
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/empty_dice" />
+
     <Button
+            android:id="@+id/roll_button"
             android:text="@string/roll"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent" android:id="@+id/button"
+            android:layout_height="match_parent"
             android:layout_gravity="center_horizontal|center_vertical"
     />
 

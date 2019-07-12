@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "956740470715",
+    "firebase_url": "https://my-kotlin-apps.firebaseio.com",
+    "project_id": "my-kotlin-apps",
+    "storage_bucket": "my-kotlin-apps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:956740470715:android:b1769a0a09593f27",
+        "android_client_info": {
+          "package_name": "com.example.diceroller"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "956740470715-f4ald41smpu3sj61smbhn4c92lk1p1s1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.diceroller",
+            "certificate_hash": "22320df82474a3aeef45b0f5fbc3792cc204fe95"
+          }
+        },
+        {
+          "client_id": "956740470715-cqlknkgbmrq7r01fq04pokfk4lnb8a2g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxs_TwlE6NQyyk2xc9_834OPqntkBCuok"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "956740470715-cqlknkgbmrq7r01fq04pokfk4lnb8a2g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

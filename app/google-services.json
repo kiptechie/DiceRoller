@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "956740470715-1sn0hp20l09nu2i4sau7u6bp5hf2ndv1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.diceroller",
+            "certificate_hash": "4f337647f2d4b72b00b4b7e3af01a907579b0169"
+          }
+        },
+        {
           "client_id": "956740470715-f4ald41smpu3sj61smbhn4c92lk1p1s1.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

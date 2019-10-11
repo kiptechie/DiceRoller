@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Dice Roller (By the CodePoet)</string>
     <string name="roll">Lets Roll</string>
+    <string name="dicerollimageview_content_description">DiceRollImageView</string>
 </resources>

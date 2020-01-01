@@ -1,4 +1,4 @@
-package com.example.diceroller
+package com.kiptechie.diceroller
 
 import androidx.test.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4

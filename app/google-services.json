@@ -8,26 +8,18 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:956740470715:android:b1769a0a09593f27",
+        "mobilesdk_app_id": "1:956740470715:android:8ea32d0be4da528aa2269e",
         "android_client_info": {
-          "package_name": "com.example.diceroller"
+          "package_name": "com.kiptechie.diceroller"
         }
       },
       "oauth_client": [
         {
-          "client_id": "956740470715-1sn0hp20l09nu2i4sau7u6bp5hf2ndv1.apps.googleusercontent.com",
+          "client_id": "956740470715-3gmoq6coo7d67p0ptl3hce79n1sr7r8a.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.diceroller",
+            "package_name": "com.kiptechie.diceroller",
             "certificate_hash": "4f337647f2d4b72b00b4b7e3af01a907579b0169"
-          }
-        },
-        {
-          "client_id": "956740470715-f4ald41smpu3sj61smbhn4c92lk1p1s1.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.diceroller",
-            "certificate_hash": "22320df82474a3aeef45b0f5fbc3792cc204fe95"
           }
         },
         {

@@ -8,14 +8,45 @@
               android:orientation="vertical"
               tools:context=".MainActivity"
               android:layout_gravity="center_horizontal|center_vertical"
-              tools:ignore="ExtraText">RF/'%%
+              tools:ignore="ExtraText"
+        android:id="@+id/home_ll">RF/'%%
+
+    <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"/>
+
+    <TextView
+            android:id="@+id/factTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:text="Roll the dice for a Chuck Norris joke!"
+            android:textSize="20sp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:gravity="center_horizontal"
+            tools:ignore="HardcodedText"
+            android:visibility="visible"/>
 
     <ImageView
             android:id="@+id/dice_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            app:srcCompat="@drawable/empty_dice"
+            app:srcCompat="@drawable/chuck_norris"
             android:contentDescription="@string/dicerollimageview_content_description"/>
 
     <Button
@@ -24,12 +55,12 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:background="@color/colorPrimaryDark"
+            android:background="@drawable/round_button"
             android:textColor="@android:color/white"
             android:layout_marginStart="80dp"
             android:layout_marginEnd="80dp"
             android:layout_marginTop="20dp"
-            android:elevation="20dp"
+            android:textAllCaps="false"
     />
 
 </LinearLayout>

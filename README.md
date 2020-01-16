@@ -4,6 +4,8 @@
 
 Minimalist Android app using Kotlin.
 
+[![Get it on Google Play](https://cdn.rawgit.com/steverichey/google-play-badge-svg/master/img/en_get.svg)](https://play.google.com/store/apps/details?id=com.kiptechie.diceroller)
+
 ## Preview
 
 ![DiceRoller](https://raw.githubusercontent.com/kiptechie/DiceRoller/master/git-assets/screenshots/roll.jpg)

@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/mvdan/android-template.svg?branch=master)](https://travis-ci.org/mvdan/android-template)
 
-Minimalist Android app using Kotlin.
+Minimalist Dice roller with Chuck Norris jokes API https://api.chucknorris.io/ app in Kotlin.
 
 [![Get it on Google Play](https://cdn.rawgit.com/steverichey/google-play-badge-svg/master/img/en_get.svg)](https://play.google.com/store/apps/details?id=com.kiptechie.diceroller)
 

@@ -1,14 +1,16 @@
 # Dice - Roller
 
-[![Build Status](https://travis-ci.org/mvdan/android-template.svg?branch=master)](https://travis-ci.org/mvdan/android-template)
-
 Minimalist Dice roller with Chuck Norris jokes API https://api.chucknorris.io/ app in Kotlin.
 
 [![Get it on Google Play](https://cdn.rawgit.com/steverichey/google-play-badge-svg/master/img/en_get.svg)](https://play.google.com/store/apps/details?id=com.kiptechie.diceroller)
 
 ## Preview
 
-![DiceRoller](https://raw.githubusercontent.com/kiptechie/DiceRoller/master/git-assets/screenshots/roll.jpg)
+![ChuckNorris](https://raw.githubusercontent.com/kiptechie/DiceRoller/master/git-assets/screenshots/chuck.jpg)
+
+![DiceRoll](https://raw.githubusercontent.com/kiptechie/DiceRoller/master/git-assets/screenshots/roll.jpg)
+
+![CodePoet](https://raw.githubusercontent.com/kiptechie/DiceRoller/master/git-assets/screenshots/code_poet.jpg)
 
 ## Structure
 

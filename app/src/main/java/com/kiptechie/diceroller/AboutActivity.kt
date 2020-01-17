@@ -37,7 +37,7 @@ class AboutActivity : AppCompatActivity() {
         })
 
         share_my_app.setOnClickListener(View.OnClickListener {
-            share("Hey check out more of my apps on Play Store https://play.google.com/store/apps/developer?id=Kiptechie")
+            share("Hey check test out this Dice Roller on Play Store https://play.google.com/apps/testing/com.kiptechie.diceroller")
         })
     }
 }

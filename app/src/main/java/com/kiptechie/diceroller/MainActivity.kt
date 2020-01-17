@@ -168,7 +168,7 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
         } else {
             connected = true
             snackBar?.dismiss()
-            factTv.text = "You're back online! let's roll"
+            factTv.text = "You're online! let's roll"
         }
     }
 }

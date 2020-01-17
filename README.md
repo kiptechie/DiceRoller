@@ -6,11 +6,13 @@ Minimalist Dice roller with Chuck Norris jokes API https://api.chucknorris.io/ a
 
 ## Preview
 
-![ChuckNorris](https://raw.githubusercontent.com/kiptechie/DiceRoller/master/git-assets/screenshots/chuck.jpg)
+Chuck Norris            |  Rolled Dice
+:-------------------------:|:-------------------------:
+![ChuckNorris](https://raw.githubusercontent.com/kiptechie/DiceRoller/master/git-assets/screenshots/chuck.jpg)  |  ![DiceRoll](https://raw.githubusercontent.com/kiptechie/DiceRoller/master/git-assets/screenshots/roll.jpg)
 
-![DiceRoll](https://raw.githubusercontent.com/kiptechie/DiceRoller/master/git-assets/screenshots/roll.jpg)
-
-![CodePoet](https://raw.githubusercontent.com/kiptechie/DiceRoller/master/git-assets/screenshots/code_poet.jpg)
+Profile           |
+:-------------------------:|
+![CodePoet](https://raw.githubusercontent.com/kiptechie/DiceRoller/master/git-assets/screenshots/code_poet.jpg) |
 
 ## Structure
 

@@ -1,28 +1,27 @@
 package com.kiptechie.diceroller
 
 import android.annotation.SuppressLint
-import android.content.DialogInterface
 import android.content.Intent
 import android.content.IntentFilter
 import android.net.ConnectivityManager
 import android.os.Bundle
-import android.text.Html
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageView
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
-import com.kiptechie.diceroller.classes.ConnectivityReceiver
+import com.kiptechie.diceroller.api.ApiInterface
+import com.kiptechie.diceroller.api.ApiUtils
+import com.kiptechie.diceroller.api.response.Categories
+import com.kiptechie.diceroller.connectivity_util.ConnectivityReceiver
 import kotlinx.android.synthetic.main.activity_main.*
-import okhttp3.*
 import org.jetbrains.anko.browse
-import org.json.JSONObject
-import java.io.IOException
+import retrofit2.Call
+import retrofit2.Response
 import java.util.*
 
 
@@ -30,10 +29,7 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
 
     private var snackBar: Snackbar? = null
     private var connected: Boolean = false
-
-    // we will use the ICNDB API for Chuck Norris Facts
-    val URL = "https://api.icndb.com/jokes/random"
-    var okHttpClient: OkHttpClient = OkHttpClient()
+    private var myApi: ApiInterface? = null
 
     lateinit var diceImage: ImageView
 
@@ -41,6 +37,8 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        myApi = ApiUtils.getAPIService()
 
         val rollButton: Button = findViewById(R.id.roll_button)
         rollButton.text = "Let's Roll"
@@ -78,7 +76,7 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
         val id = item.itemId
 
         if (id == R.id.about_me) {
-            val intent = Intent(this, AboutActivity::class.java)
+            val intent = Intent(applicationContext, AboutActivity::class.java)
             startActivity(intent)
             return true
         }
@@ -113,41 +111,35 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
             factTv.visibility = View.GONE
         }
 
-        val request: Request = Request.Builder().url(URL).build()
-        okHttpClient.newCall(request).enqueue(object: Callback {
-            override fun onFailure(call: Call?, e: IOException?) {
-                val error = e.toString()
-                // build alert dialog
-                val dialogBuilder = AlertDialog.Builder(this@MainActivity)
-                // set message of alert dialog
-                dialogBuilder.setMessage("Error: $error")
-                    // if the dialog is cancelable
-                    .setCancelable(false)
-                    // positive button text and action
-                    .setPositiveButton("Ok", DialogInterface.OnClickListener {
-                            dialog, id -> finish()
-                    })
-                // create dialog box
-                val alert = dialogBuilder.create()
-                // show alert dialog
-                alert.show()
+        myApi?.randomJokes?.enqueue(object: retrofit2.Callback<Categories> {
+            override fun onFailure(call: Call<Categories>, t: Throwable) {
+                val error = t.toString()
+                snackBar = Snackbar.make(findViewById(R.id.home_ll), error, Snackbar.LENGTH_LONG) //Assume "home_ll" as the root layout of every activity.
+                snackBar?.duration = BaseTransientBottomBar.LENGTH_LONG
+                snackBar?.show()
             }
 
-            override fun onResponse(call: Call?, response: Response?) {
-                val json = response?.body()?.string()
-                // we get the joke from the Web Service
-                val txt = (JSONObject(json).getJSONObject("value").get("joke")).toString()
+            override fun onResponse(call: Call<Categories>, response: Response<Categories>) {
 
-                // we update the UI from the UI Thread
+                val joke = response.body()?.value.toString()
+                val bad = response.body()?.categories
                 runOnUiThread {
                     progressBar.visibility = View.GONE
                     factTv.visibility = View.VISIBLE
-                    // we use Html class to decode html entities
-                    factTv.text = Html.fromHtml(txt)
+                    factTv.text = joke
+                    // to do add the 18+ icon
+//                    try {
+//                        if ( bad?.get(0).toString() == "explicit") {
+//                            explicit_logo.visibility = View.VISIBLE
+//                        } else {
+//                            explicit_logo.visibility = View.GONE
+//                        }
+//                    } catch (t: Throwable) {
+//                        t.printStackTrace()
+//                    }
                 }
             }
         })
-
     }
 
     override fun onNetworkConnectionChanged(isConnected: Boolean) {
@@ -158,14 +150,17 @@ class MainActivity : AppCompatActivity(), ConnectivityReceiver.ConnectivityRecei
         super.onResume()
         ConnectivityReceiver.connectivityReceiverListener = this
     }
+    @SuppressLint("SetTextI18n")
     private fun showNetworkMessage(isConnected: Boolean) {
         if (!isConnected) {
+            roll_button.isEnabled = false
             connected = false
             snackBar = Snackbar.make(findViewById(R.id.home_ll), "You are offline", Snackbar.LENGTH_LONG) //Assume "home_ll" as the root layout of every activity.
             snackBar?.duration = BaseTransientBottomBar.LENGTH_INDEFINITE
             snackBar?.show()
             factTv.text = "You're Offline"
         } else {
+            roll_button.isEnabled = true
             connected = true
             snackBar?.dismiss()
             factTv.text = "You're online! let's roll"
